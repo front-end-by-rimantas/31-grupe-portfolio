@@ -1,0 +1,5 @@
+class PortfolioItem {
+
+}
+
+export { PortfolioItem }

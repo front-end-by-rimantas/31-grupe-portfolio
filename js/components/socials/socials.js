@@ -1,0 +1,5 @@
+function socials() {
+
+}
+
+export { socials }
