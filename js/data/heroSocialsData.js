@@ -5,4 +5,4 @@ const heroSocialsData = [
     },
 ];
 
-export { heroSocialsData }
+export { heroSocialsData };
