@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1635962821736" clover="3.2.0">
+  <project timestamp="1635962821736" name="All files">
+    <metrics statements="25" coveredstatements="25" conditionals="29" coveredconditionals="29" methods="7" coveredmethods="7" elements="61" coveredelements="61" complexity="0" loc="25" ncloc="25" packages="1" files="1" classes="1"/>
+    <file name="Services.js" path="C:\Users\belau\Documents\_31-grupe_\31-grupe-portfolio\js\components\services\Services.js">
+      <metrics statements="25" coveredstatements="25" conditionals="29" coveredconditionals="29" methods="7" coveredmethods="7"/>
+      <line num="3" count="16" type="stmt"/>
+      <line num="4" count="16" type="stmt"/>
+      <line num="6" count="16" type="stmt"/>
+      <line num="13" count="16" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="4" type="stmt"/>
+      <line num="21" count="12" type="stmt"/>
+      <line num="25" count="16" type="cond" truecount="4" falsecount="0"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="28" count="15" type="stmt"/>
+      <line num="32" count="15" type="cond" truecount="4" falsecount="0"/>
+      <line num="33" count="1" type="stmt"/>
+      <line num="35" count="14" type="stmt"/>
+      <line num="39" count="14" type="stmt"/>
+      <line num="40" count="14" type="stmt"/>
+      <line num="44" count="16" type="cond" truecount="2" falsecount="0"/>
+      <line num="56" count="15" type="stmt"/>
+      <line num="58" count="1" type="stmt"/>
+      <line num="62" count="12" type="stmt"/>
+      <line num="64" count="12" type="stmt"/>
+      <line num="65" count="16" type="cond" truecount="2" falsecount="0"/>
+      <line num="66" count="1" type="stmt"/>
+      <line num="74" count="12" type="cond" truecount="2" falsecount="0"/>
+      <line num="75" count="11" type="stmt"/>
+      <line num="78" count="1" type="stmt"/>
+      <line num="79" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

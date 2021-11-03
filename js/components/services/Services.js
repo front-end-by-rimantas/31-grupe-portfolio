@@ -4,8 +4,6 @@ class Services {
         this.data = data;
 
         this.DOM = null;
-
-        this.init();
     }
 
     init() {
@@ -20,7 +18,7 @@ class Services {
             return false;
         }
 
-        this.render();
+        return this.render();
     }
 
     isValidSelector() {
@@ -42,18 +40,43 @@ class Services {
         return !!this.DOM;
     }
 
+    isValidService(service) {
+        if (
+            typeof service !== 'object' ||
+            service === null ||
+            Array.isArray(service) ||
+            Object.keys(service).length !== 3 ||
+            typeof service.icon !== 'string' ||
+            service.icon === '' ||
+            typeof service.title !== 'string' ||
+            service.title === '' ||
+            typeof service.description !== 'string' ||
+            service.description === ''
+        ) {
+            return false;
+        }
+        return true;
+    }
+
     render() {
         let HTML = '';
 
         for (const service of this.data) {
-            HTML += `<div class="service col-12 col-md-6 col-lg-4">
-                        <i class="fa fa-${service.icon}"></i>
-                        <h3>${service.title}</h3>
-                        <p>${service.description}</p>
-                    </div>`;
+            if (this.isValidService(service)) {
+                HTML += `<div class="service col-12 col-md-6 col-lg-4">
+                            <i class="fa fa-${service.icon}"></i>
+                            <h3>${service.title}</h3>
+                            <p>${service.description}</p>
+                        </div>`;
+            }
+        }
+
+        if (HTML === '') {
+            return false;
         }
 
         this.DOM.innerHTML = HTML;
+        return true;
     }
 }
 

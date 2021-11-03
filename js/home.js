@@ -4,4 +4,5 @@ import { servicesData } from './data/servicesData.js';
 
 // execution
 
-new Services('#services_content', servicesData);
+const servicesObj = new Services('#services_content', servicesData);
+servicesObj.init();
