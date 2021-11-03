@@ -116,5 +116,5 @@ test('Duodamas tinkamas service objektas, todel pavyksta', () => {
 })
 
 test('Dami dami', () => {
-    expect(2 * 2).toBe(3);
+    expect(2 * 2).toBe(4);
 })
