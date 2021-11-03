@@ -114,3 +114,7 @@ test('Duodamas tinkamas service objektas, todel pavyksta', () => {
     }]);
     expect(servObj.init()).toBeTruthy();
 })
+
+test('Dami dami', () => {
+    expect(2 * 2).toBe(3);
+})

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1635962821736" clover="3.2.0">
-  <project timestamp="1635962821736" name="All files">
+<coverage generated="1635965244425" clover="3.2.0">
+  <project timestamp="1635965244426" name="All files">
     <metrics statements="25" coveredstatements="25" conditionals="29" coveredconditionals="29" methods="7" coveredmethods="7" elements="61" coveredelements="61" complexity="0" loc="25" ncloc="25" packages="1" files="1" classes="1"/>
     <file name="Services.js" path="C:\Users\belau\Documents\_31-grupe_\31-grupe-portfolio\js\components\services\Services.js">
       <metrics statements="25" coveredstatements="25" conditionals="29" coveredconditionals="29" methods="7" coveredmethods="7"/>
