@@ -4,4 +4,4 @@ import { servicesData } from './data/servicesData.js';
 
 // execution
 
-new Services(servicesData);
+new Services('#services_content', servicesData);

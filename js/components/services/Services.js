@@ -1,25 +1,59 @@
 class Services {
-    constructor(data) {
+    constructor(selector, data) {
+        this.selector = selector;
         this.data = data;
+
+        this.DOM = null;
+
+        this.init();
+    }
+
+    init() {
+        // ar validus selector - ne tuscias string
+        // ar validus data - ne tuscias array
+        // ar pagal duota selector galima rasti norima elementa - DOM elementas egzistuoja
+        if (
+            !this.isValidSelector() ||
+            !this.isValidData() ||
+            !this.canFindTargetElement()
+        ) {
+            return false;
+        }
 
         this.render();
     }
 
+    isValidSelector() {
+        if (typeof this.selector !== 'string' || this.selector === '') {
+            return false;
+        }
+        return true;
+    }
+
+    isValidData() {
+        if (!Array.isArray(this.data) || this.data.length === 0) {
+            return false;
+        }
+        return true;
+    }
+
+    canFindTargetElement() {
+        this.DOM = document.querySelector(this.selector);
+        return !!this.DOM;
+    }
+
     render() {
-        const templateHTML = document.querySelector('#service_template')
-            .innerHTML;
         let HTML = '';
 
         for (const service of this.data) {
-            let serviceHTML = templateHTML;
-            for (const key in service) {
-                serviceHTML = serviceHTML.replace(`{{${key}}}`, service[key]);
-            }
-            HTML += serviceHTML;
+            HTML += `<div class="service col-12 col-md-6 col-lg-4">
+                        <i class="fa fa-${service.icon}"></i>
+                        <h3>${service.title}</h3>
+                        <p>${service.description}</p>
+                    </div>`;
         }
 
-        const DOM = document.querySelector('#services_content');
-        DOM.innerHTML = HTML;
+        this.DOM.innerHTML = HTML;
     }
 }
 
