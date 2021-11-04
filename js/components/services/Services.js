@@ -1,3 +1,5 @@
+import { IsValid } from '../is-valid/IsValid.js';
+
 class Services {
     constructor(selector, data) {
         this.selector = selector;
@@ -7,12 +9,9 @@ class Services {
     }
 
     init() {
-        // ar validus selector - ne tuscias string
-        // ar validus data - ne tuscias array
-        // ar pagal duota selector galima rasti norima elementa - DOM elementas egzistuoja
         if (
-            !this.isValidSelector() ||
-            !this.isValidData() ||
+            !IsValid.nonEmptyString(this.selector) ||
+            !IsValid.nonEmptyArray(this.data) ||
             !this.canFindTargetElement()
         ) {
             return false;
@@ -21,41 +20,19 @@ class Services {
         return this.render();
     }
 
-    isValidSelector() {
-        if (typeof this.selector !== 'string' || this.selector === '') {
-            return false;
-        }
-        return true;
-    }
-
-    isValidData() {
-        if (!Array.isArray(this.data) || this.data.length === 0) {
-            return false;
-        }
-        return true;
-    }
-
     canFindTargetElement() {
         this.DOM = document.querySelector(this.selector);
         return !!this.DOM;
     }
 
     isValidService(service) {
-        if (
-            typeof service !== 'object' ||
-            service === null ||
-            Array.isArray(service) ||
-            Object.keys(service).length !== 3 ||
-            typeof service.icon !== 'string' ||
-            service.icon === '' ||
-            typeof service.title !== 'string' ||
-            service.title === '' ||
-            typeof service.description !== 'string' ||
-            service.description === ''
-        ) {
-            return false;
-        }
-        return true;
+        return (
+            IsValid.trueObject(service) &&
+            IsValid.objectKeysCount(service, 3) &&
+            IsValid.nonEmptyString(service.icon) &&
+            IsValid.nonEmptyString(service.title) &&
+            IsValid.nonEmptyString(service.description)
+        );
     }
 
     render() {
